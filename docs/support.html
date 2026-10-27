@@ -19,12 +19,11 @@
   <main class="page plain">
     <h1>Support</h1>
     <p class="lede">Ask a question or report a problem — a person reads every one.</p>
-    <!-- Issues on the public repo until there's a domain (Alkarim, 2026-10-27); then SUPPORT_EMAIL below adds email. -->
     <a class="btn btn-primary" href="https://github.com/Alkarim-Billawala/iridescent-app/issues">Open an Issue on GitHub</a>
     <a class="btn" id="mail" href="#" hidden>Email Support</a>
     <ul>
       <li class="glass"><b>What to include:</b> the show, the episode, and what happened.</li>
-      <li class="glass"><b>Issues are public,</b> so please leave out anything personal.</li>
+      <li class="glass"><b>Issues are public,</b> so please leave out anything personal. For anything private, email instead.</li>
       <li class="glass"><b>Something looks wrong in a transcript or a skip?</b> The episode's name and the time in it are enough to find it.</li>
     </ul>
   </main>
@@ -33,7 +32,7 @@
     <span>Iridescent</span><a href="privacy.html">Privacy</a><a href="support.html">Support</a><span>© 2026 Alkarim Billawala</span>
   </footer>
   <script>
-    const SUPPORT_EMAIL = ''; // e.g. 'support@example.com' — set once a domain is chosen
+    const SUPPORT_EMAIL = 'support@iridescentpodcasts.com';
     if (SUPPORT_EMAIL) {
       const a = document.getElementById('mail');
       a.href = 'mailto:' + SUPPORT_EMAIL + '?subject=Iridescent';
