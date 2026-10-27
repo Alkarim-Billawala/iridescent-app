@@ -5,7 +5,7 @@
 Every episode transcribed on your phone, ads skipped, chapters where there were none, and your free and members' feeds
 as one show — built with Apple's own controls and Liquid Glass. No account, no tracking.
 
-- **Get it:** iPhone and iPad — [join the TestFlight beta](https://testflight.apple.com/join/zXPsmnuT) · App Store —
+- **Get it:** iPhone and iPad — [join the public beta on TestFlight](https://testflight.apple.com/join/TkadYCSF) · App Store —
   coming soon · Mac — a download here when it's ready
 - **Privacy:** [Privacy Policy](https://iridescentpodcasts.com/privacy.html)
 - **Support:** [open an issue](https://github.com/Alkarim-Billawala/iridescent-app/issues/new/choose) — issues are public,
