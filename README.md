@@ -17,7 +17,7 @@ app's code isn't here.
 
 ## Features
 
-The highlights. **[Every feature](FEATURES.md)** has the full list.
+The highlights. See the **[Full Feature List](FEATURES.md)** for everything.
 
 ### Every episode, transcribed on your iPhone
 Read along as it plays. Tap a line to jump there. Search every word in your library. An hour of audio takes under a

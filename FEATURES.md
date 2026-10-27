@@ -1,4 +1,4 @@
-# Iridescent — Every Feature
+# Iridescent — Full Feature List
 
 Everything Iridescent does today, area by area. Lines marked ¹ use your own Claude API key — optional; everything else
 works without one, on your iPhone.
