@@ -9,7 +9,8 @@ as one show — built with Apple's own controls and Liquid Glass. No account, no
   coming soon · Mac — a download here when it's ready
 - **Privacy:** [Privacy Policy](https://iridescentpodcasts.com/privacy.html)
 - **Support:** [open an issue](https://github.com/Alkarim-Billawala/iridescent-app/issues/new/choose) — issues are public,
-  so please leave out anything personal
+  so please leave out anything personal. For anything private, email
+  [support@iridescentpodcasts.com](mailto:support@iridescentpodcasts.com).
 
 This is Iridescent's public home: its website, its feature list and its issue tracker. Iridescent isn't open source — the
 app's code isn't here.
@@ -116,7 +117,7 @@ No. This repository holds the website, the feature list and the issue tracker; t
 
 [Open an issue](https://github.com/Alkarim-Billawala/iridescent-app/issues/new/choose) — the show, the episode and what
 happened is usually all it takes. Issues are public, so please leave out anything personal, and never paste a private
-feed's link.
+feed's link. For anything private, email [support@iridescentpodcasts.com](mailto:support@iridescentpodcasts.com).
 </details>
 
 ## License
