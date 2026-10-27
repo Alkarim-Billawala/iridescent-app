@@ -1,0 +1,8 @@
+Iridescent
+Copyright © 2026 Alkarim Billawala
+All rights reserved.
+
+Iridescent is not open source. This repository holds Iridescent's website, its feature list and its
+issue tracker; the app's source code is not published here. No license is granted to copy, modify,
+redistribute, or commercially exploit the app, its design, or the contents of this repository
+without the author's prior written permission.

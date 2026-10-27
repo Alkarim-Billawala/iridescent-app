@@ -1,0 +1,234 @@
+/* The site's base: tokens, the glass, the sheen, the CSS-drawn phone. Used by the site pages and the step-2 mock-ups. */
+
+@property --sheen-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #07080d;
+  --bg-2: #0d0f19;
+  --text: #f4f5fa;
+  --text-2: rgba(235, 238, 250, 0.68);
+  --text-3: rgba(235, 238, 250, 0.42);
+  --hairline: rgba(255, 255, 255, 0.12);
+
+  /* The one motif: an oil-slick sheen — thin-film colours in their natural order. Its own palette:
+     it doesn't come from the app icon, so a new icon leaves it alone. */
+  --sheen-1: #8a74ff; /* violet */
+  --sheen-2: #4fa8ff; /* blue */
+  --sheen-3: #3fd8c4; /* cyan */
+  --sheen-4: #bdf27c; /* green-gold */
+  --sheen-5: #ffd07a; /* amber */
+  --sheen-6: #ff8fb8; /* rose */
+  --sheen-7: #b07cff; /* magenta-violet */
+  --sheen: conic-gradient(from var(--sheen-angle), var(--sheen-1), var(--sheen-2), var(--sheen-3),
+      var(--sheen-4), var(--sheen-5), var(--sheen-6), var(--sheen-7), var(--sheen-1));
+  --sheen-linear: linear-gradient(100deg, var(--sheen-1) 0%, var(--sheen-2) 22%, var(--sheen-3) 42%,
+      var(--sheen-4) 58%, var(--sheen-5) 74%, var(--sheen-6) 88%, var(--sheen-7) 100%);
+
+  /* The page's faint ambient light: the only place the icon's colours are used (assets/icon-tokens.css,
+     made by tools/icon.py). */
+  --ambient:
+      radial-gradient(50% 60% at 78% 40%, rgb(var(--icon-3-rgb) / 0.20), transparent 70%),
+      radial-gradient(40% 50% at 12% 95%, rgb(var(--icon-1-rgb) / 0.12), transparent 70%);
+
+  --glass-fill: rgba(255, 255, 255, 0.07);
+  --glass-edge: rgba(255, 255, 255, 0.16);
+  --glass-hi: rgba(255, 255, 255, 0.28);
+
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(16px, 5vw, 56px);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--ambient), var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+
+@keyframes sheen-turn { to { --sheen-angle: 360deg; } }
+
+/* Liquid Glass, approximated: a blurred, saturated pane with a bright top edge. */
+.glass {
+  background: var(--glass-fill);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  backdrop-filter: blur(22px) saturate(170%);
+  border: 1px solid var(--glass-edge);
+  box-shadow:
+    inset 0 1px 0 var(--glass-hi),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+    0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ---- Top bar ---- */
+.nav {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px var(--gutter);
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+.brand img { width: 30px; height: 30px; border-radius: 7px; }
+.nav-links { display: flex; gap: 22px; font-size: 14px; color: var(--text-2); }
+.nav-links a:hover { color: var(--text); }
+@media (max-width: 560px) { .nav-links { display: none; } }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 46px; padding: 0 22px; border-radius: 999px;
+  font-size: 15px; font-weight: 600; letter-spacing: -0.005em;
+}
+.btn-primary { background: var(--text); color: #0a0b12; }
+.btn-ghost { color: var(--text); }
+.btn svg { width: 16px; height: 16px; }
+
+/* ---- Review switcher (mock-ups only) ---- */
+.review-bar {
+  position: fixed; z-index: 50; left: 50%; bottom: 16px; transform: translateX(-50%);
+  display: flex; gap: 4px; padding: 4px; border-radius: 999px; font-size: 13px; font-weight: 600;
+}
+.review-bar a { padding: 7px 14px; border-radius: 999px; color: var(--text-2); white-space: nowrap; }
+.review-bar a[aria-current] { background: rgba(255, 255, 255, 0.14); color: var(--text); }
+
+/* ================================================================
+   The phone: an iPhone 17 Pro-shaped frame (402 × 874 pt) drawn in pt
+   units, so it scales as one piece at any width.
+   ================================================================ */
+.phone {
+  --w: 330px;
+  width: var(--w);
+  aspect-ratio: 402 / 874;
+  container-type: inline-size;
+  position: relative;
+  border-radius: calc(var(--w) * 0.148);
+  padding: calc(var(--w) * 0.03);
+  background: linear-gradient(145deg, #3a3d48, #15161c 40%, #2b2d36 70%, #101116);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.10),
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    0 10px 24px rgba(0, 0, 0, 0.5);
+}
+.screen {
+  --pt: calc(100cqw / 402 * 1.065); /* the screen sits inside the bezel */
+  position: relative;
+  width: 100%; height: 100%;
+  border-radius: calc(var(--pt) * 52);
+  overflow: hidden;
+  background:
+    radial-gradient(120% 60% at 50% 0%, #3a2f6b 0%, transparent 65%),
+    linear-gradient(180deg, #241d45 0%, #16142b 55%, #0f0e1d 100%);
+  color: #fff;
+  font-family: var(--font);
+  font-size: calc(var(--pt) * 17);
+  display: flex; flex-direction: column; align-items: stretch;
+  text-align: left;
+}
+.island {
+  position: absolute; top: calc(var(--pt) * 11); left: 50%; transform: translateX(-50%);
+  width: calc(var(--pt) * 124); height: calc(var(--pt) * 36); border-radius: 999px; background: #000;
+}
+.statusbar {
+  height: calc(var(--pt) * 54); flex: none;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 calc(var(--pt) * 34) 0 calc(var(--pt) * 44);
+  font-weight: 600; font-size: calc(var(--pt) * 16);
+}
+.statusbar .icons { display: flex; gap: calc(var(--pt) * 6); align-items: center; }
+.statusbar .icons i { display: block; background: #fff; border-radius: calc(var(--pt) * 2); }
+.grabber {
+  width: calc(var(--pt) * 38); height: calc(var(--pt) * 5); border-radius: 999px;
+  background: rgba(255, 255, 255, 0.32); margin: calc(var(--pt) * 2) auto calc(var(--pt) * 16);
+}
+.art {
+  align-self: center;
+  width: calc(var(--pt) * 262); aspect-ratio: 1; border-radius: calc(var(--pt) * 14);
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(60% 60% at 50% 42%, #ffcf7a 0%, #f39a53 26%, transparent 27%),
+    radial-gradient(90% 80% at 50% 45%, rgba(255, 170, 90, 0.55) 0%, transparent 60%),
+    linear-gradient(160deg, #3b2a6e 0%, #1c1840 100%);
+  box-shadow: 0 calc(var(--pt) * 18) calc(var(--pt) * 40) rgba(0, 0, 0, 0.45);
+}
+.art::after {
+  content: "LANTERN\A HOUR"; white-space: pre;
+  position: absolute; left: calc(var(--pt) * 18); bottom: calc(var(--pt) * 14);
+  font-family: var(--font-display); font-weight: 800; letter-spacing: 0.04em;
+  font-size: calc(var(--pt) * 26); line-height: 0.95; color: #fff4e3;
+}
+.meta {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: calc(var(--pt) * 22) calc(var(--pt) * 28) 0;
+}
+.meta .show { font-size: calc(var(--pt) * 14); color: rgba(255, 255, 255, 0.6); font-weight: 500; }
+.meta .title { font-size: calc(var(--pt) * 19); font-weight: 700; margin-top: calc(var(--pt) * 2); letter-spacing: -0.01em; }
+.round {
+  width: calc(var(--pt) * 32); height: calc(var(--pt) * 32); border-radius: 999px;
+  display: grid; place-items: center; font-weight: 800; font-size: calc(var(--pt) * 15); letter-spacing: 0.08em;
+}
+.preview {
+  padding: calc(var(--pt) * 16) calc(var(--pt) * 28) 0;
+  font-size: calc(var(--pt) * 16.5); line-height: 1.32; letter-spacing: -0.005em;
+}
+.preview p { margin: 0 0 calc(var(--pt) * 5); color: rgba(255, 255, 255, 0.42); }
+.preview p.now { color: #fff; font-weight: 700; }
+.scrub { padding: calc(var(--pt) * 18) calc(var(--pt) * 28) 0; }
+.track { display: flex; gap: calc(var(--pt) * 3); height: calc(var(--pt) * 6); }
+.track span { border-radius: 999px; background: rgba(255, 255, 255, 0.22); }
+.track span.done { background: rgba(255, 255, 255, 0.9); }
+.track span.part { background: linear-gradient(90deg, rgba(255,255,255,.9) var(--p), rgba(255,255,255,.22) var(--p)); }
+.track span.skip {
+  background: repeating-linear-gradient(-45deg, rgba(255,255,255,.28) 0 calc(var(--pt)*2.5), transparent calc(var(--pt)*2.5) calc(var(--pt)*5));
+}
+.times {
+  display: flex; justify-content: space-between; margin-top: calc(var(--pt) * 7);
+  font-size: calc(var(--pt) * 12); color: rgba(255, 255, 255, 0.55); font-weight: 600; font-variant-numeric: tabular-nums;
+}
+.controls {
+  display: flex; justify-content: center; align-items: center; gap: calc(var(--pt) * 52);
+  padding-top: calc(var(--pt) * 18);
+}
+.controls svg { width: calc(var(--pt) * 34); height: calc(var(--pt) * 34); fill: #fff; }
+.controls svg.big { width: calc(var(--pt) * 46); height: calc(var(--pt) * 46); }
+.bottom {
+  margin-top: auto; padding: 0 calc(var(--pt) * 26) calc(var(--pt) * 34);
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: calc(var(--pt) * 15); font-weight: 600;
+}
+.bottom .speed { color: rgba(255, 255, 255, 0.85); }
+.pill-notice {
+  display: inline-flex; align-items: center; gap: calc(var(--pt) * 6);
+  height: calc(var(--pt) * 34); padding: 0 calc(var(--pt) * 14); border-radius: 999px;
+  font-size: calc(var(--pt) * 13.5); font-weight: 600; white-space: nowrap;
+}
+.pill-notice b { font-weight: 700; color: #fff; }
+.pill-notice .sep { opacity: 0.45; }
+.homebar {
+  position: absolute; bottom: calc(var(--pt) * 8); left: 50%; transform: translateX(-50%);
+  width: calc(var(--pt) * 140); height: calc(var(--pt) * 5); border-radius: 999px; background: rgba(255, 255, 255, 0.85);
+}
+
+/* A notice floating beside the phone, in page units. */
+.float-pill {
+  display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px;
+  font-size: 14.5px; font-weight: 600; white-space: nowrap; color: var(--text);
+}
+.float-pill .sep { opacity: 0.4; }
+.float-pill .undo { color: #fff; }
+.float-pill svg { width: 15px; height: 15px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
