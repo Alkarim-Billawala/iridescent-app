@@ -6,7 +6,7 @@ This is Iridescent's public home: its website, its privacy policy, and the place
 Iridescent isn't open source — the app's code isn't here.
 
 - **Get it:** TestFlight beta — coming soon · App Store — coming soon · Mac — a download here when it's ready
-- **Privacy:** [Privacy Policy](https://alkarim-billawala.github.io/iridescent-app/privacy.html) — no account, no tracking,
+- **Privacy:** [Privacy Policy](https://iridescentpodcasts.com/privacy.html) — no account, no tracking,
   no ads, no analytics
 - **Support:** [open an issue](https://github.com/Alkarim-Billawala/iridescent-app/issues/new/choose) — issues are public,
   so please leave out anything personal
