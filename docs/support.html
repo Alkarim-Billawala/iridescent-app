@@ -32,13 +32,14 @@
     <span>Iridescent</span><a href="privacy.html">Privacy</a><a href="support.html">Support</a><span>© 2026 Alkarim Billawala</span>
   </footer>
   <script>
-    const SUPPORT_EMAIL = 'support@iridescentpodcasts.com';
-    if (SUPPORT_EMAIL) {
-      const a = document.getElementById('mail');
-      a.href = 'mailto:' + SUPPORT_EMAIL + '?subject=Iridescent';
-      a.textContent = SUPPORT_EMAIL;
-      a.hidden = false;
-    }
+    // The address is never written whole in the page: shown spelled out, put together only when tapped.
+    const a = document.getElementById('mail');
+    a.textContent = 'support [at] iridescentpodcasts [dot] com';
+    a.addEventListener('click', (event) => {
+      event.preventDefault();
+      location.href = 'mai' + 'lto:' + ['support', 'iridescentpodcasts' + '.' + 'com'].join('@') + '?subject=Iridescent';
+    });
+    a.hidden = false;
   </script>
 </body>
 </html>

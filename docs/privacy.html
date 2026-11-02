@@ -19,7 +19,7 @@
   <main class="page plain">
     <h1>Privacy</h1>
     <p class="lede">Iridescent is a player, not a service. There is nothing to sign up for and nothing watching.</p>
-    <p class="policy-facts"><b>Effective date:</b> October 30, 2026<br><b>Who we are:</b> Iridescent is made by Alkarim Billawala, an individual based in Canada.<br><b>Contact:</b> <a href="mailto:privacy@iridescentpodcasts.com">privacy@iridescentpodcasts.com</a>, or <a href="https://github.com/Alkarim-Billawala/iridescent-app/issues">open an issue on GitHub</a>. Issues are public, so please leave out anything personal.</p>
+    <p class="policy-facts"><b>Effective date:</b> October 30, 2026<br><b>Who we are:</b> Iridescent is made by Alkarim Billawala, an individual based in Canada.<br><b>Contact:</b> <a class="mail" href="#">privacy [at] iridescentpodcasts [dot] com</a>, or <a href="https://github.com/Alkarim-Billawala/iridescent-app/issues">open an issue on GitHub</a>. Issues are public, so please leave out anything personal.</p>
     <ul>
       <li class="glass"><b>No account, no tracking, no ads, no analytics.</b> We collect nothing about you, and there is no Iridescent server.</li>
       <li class="glass"><b>Your library, transcripts and listening history live on your device.</b></li>
@@ -55,7 +55,7 @@
 
       <h2>What we keep, and your rights</h2>
       <p>Nothing about you: there is no Iridescent server, and we hold no account, no listening history and no copy of your data. So there's nothing for us to give you, correct or delete — everything is on your devices or in your own iCloud account, under your control.</p>
-      <p>A question, request or complaint: email <a href="mailto:privacy@iridescentpodcasts.com">privacy@iridescentpodcasts.com</a>, or <a href="https://github.com/Alkarim-Billawala/iridescent-app/issues">open an issue on GitHub</a> (it's public, so please leave out anything personal). You can also complain to your local authority: the Office of the Privacy Commissioner of Canada, your EU supervisory authority, or the ICO in the UK.</p>
+      <p>A question, request or complaint: email <a class="mail" href="#">privacy [at] iridescentpodcasts [dot] com</a>, or <a href="https://github.com/Alkarim-Billawala/iridescent-app/issues">open an issue on GitHub</a> (it's public, so please leave out anything personal). You can also complain to your local authority: the Office of the Privacy Commissioner of Canada, your EU supervisory authority, or the ICO in the UK.</p>
 
       <h2>iCloud</h2>
       <p>With iCloud Sync on (Settings › iCloud Sync), Iridescent keeps your podcasts, playlists, places, settings and listening history the same on your own devices, in a private database in your own iCloud account. We can't see it. It's encrypted in iCloud. With Advanced Data Protection turned on, it's end-to-end encrypted and only your devices can read it; otherwise Apple holds the keys, as it does for most iCloud data. Turn iCloud Sync off to stop, and remove the copy in Settings › your name › iCloud › Manage Storage › Iridescent.</p>
@@ -71,5 +71,12 @@
   <footer class="page footer">
     <span>Iridescent</span><a href="privacy.html">Privacy</a><a href="support.html">Support</a><span>© 2026 Alkarim Billawala</span>
   </footer>
+  <script>
+    // The address is never written whole in the page: shown spelled out, put together only when tapped.
+    document.querySelectorAll('a.mail').forEach((a) => a.addEventListener('click', (event) => {
+      event.preventDefault();
+      location.href = 'mai' + 'lto:' + ['privacy', 'iridescentpodcasts' + '.' + 'com'].join('@');
+    }));
+  </script>
 </body>
 </html>
