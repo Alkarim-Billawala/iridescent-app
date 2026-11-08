@@ -3,6 +3,14 @@
   <channel>
     <title>Iridescent for Mac</title>
     <item>
+      <title>Iridescent 0.1.0 (1360)</title>
+      <pubDate>Sun, 08 Nov 2026 17:50:44 +0000</pubDate>
+      <sparkle:version>1360</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>27.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/Alkarim-Billawala/iridescent-app/releases/download/v0.1.0-1360/Iridescent-0.1.0-1360.dmg" type="application/octet-stream" sparkle:edSignature="dn8UIvl+ac9G3Zehkq6uCENFbARJ1MiNtFqWjfcL6D0a74F8NKDzrXc7NJVvgqrowUsN58bZ+I0GK7bSEjyrDg==" length="22106984" />
+    </item>
+    <item>
       <title>Iridescent 0.1.0 (1340)</title>
       <pubDate>Fri, 06 Nov 2026 18:42:34 +0000</pubDate>
       <sparkle:version>1340</sparkle:version>
